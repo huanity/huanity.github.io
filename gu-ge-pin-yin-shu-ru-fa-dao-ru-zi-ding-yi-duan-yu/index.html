@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
+<meta name="description" content="温故而知新">
+<meta name="theme-color" content="#000">
+<title>谷歌拼音输入法导入自定义短语 | huanity</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1653965935060">
+<link rel="stylesheet" href="/media/css/gemini.css">
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/androidstudio.css"
+  rel="stylesheet">
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+  <meta name="description" content="谷歌拼音输入法导入自定义短语" />
+  <meta name="keywords" content="输入法" />
+</head>
+
+<body>
+  <div class="head-top-line"></div>
+  <div class="header-box">
+    
+<div class="gemini">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>huanity</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">精于心，简于形</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/about/" target="_self">
+                  <i class="fa fa-globe"></i> 关于
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友情链接
+                  
+                </a>
+              </li>
+            
+          
+          
+            <li id="fa_search" class="nav-item">
+              <a href="javascript:void(0);">
+                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout gemini ">
+      <div class="section-layout-wrapper">
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">huanity</p>
+    
+    <div class="site-description right-motion">
+      
+      
+      
+        <p>咸鱼一条，没啥好说的～</p>
+      
+      
+    </div>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-name language" data-lan="article">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-name language" data-lan="category">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-name language" data-lan="tag">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://huanity.github.io/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+
+
+
+</div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#gboard%E9%94%AE%E7%9B%98%E5%85%8Droot%E5%AF%BC%E5%85%A5%E6%9C%AC%E5%9C%B0%E8%AF%8D%E5%85%B8">Gboard键盘免root导入本地词典</a>
+<ul>
+<li><a href="#%E6%AD%A5%E9%AA%A4">【步骤】：</a></li>
+</ul>
+</li>
+<li><a href="#gboard%E9%94%AE%E7%9B%98%E8%AF%8D%E5%85%B8%E6%A0%BC%E5%BC%8F%E5%A6%82%E4%B8%8B">Gboard键盘词典格式如下</a></li>
+<li><a href="#%E5%85%8Droot%E5%88%A0%E9%99%A4%E5%85%A8%E9%83%A8%E8%AF%8D%E5%BA%93%E7%9A%84%E6%96%B9%E6%B3%95">免root删除全部词库的方法：</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://huanity.github.io/gu-ge-pin-yin-shu-ru-fa-dao-ru-zi-ding-yi-duan-yu/">
+      谷歌拼音输入法导入自定义短语
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-06-14 16:36:22">2020-06-14</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://huanity.github.io/TTmPvDD2U/">
+        <span>输入法</span>
+      </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>3<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>694<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <p>  主要记录了谷歌拼音输入法词库的导入方法以及相关工具</p>
+<!-- more -->
+<p>  在Gboard评论区偶然看见大佬发的字典导入教程，那时候Gboard的字典还没有导入导出选项，文中提及是用系统自带的个人字典，谷歌拼音和Gboard同样适用，感觉可以试一下。</p>
+<p>  教程如下（文中部分修改和替换文件了链接）：</p>
+<h1 id="gboard键盘免root导入本地词典">Gboard键盘免root导入本地词典</h1>
+<p>  众所周知，因为涉及用户隐私问题，Gboard键盘和谷歌拼音已经没有了同步词典的功能。<br>
+但是我们可以另辟蹊径曲线救国。无需root，下载安装一个“用户个人词典备份工具 User Dictionary Backup.apk”，就可以导入本地词典，Gboard键盘和谷歌拼音都可以读取使用。</p>
+<h2 id="步骤">【步骤】：</h2>
+<p>  打开用户个人词典备份工具，<br>
+  <strong>step1：</strong> 先点击［启用输入法］，在系统输入法里面添加 User Dictionary Backup 输入法。</p>
+<p>  <strong>step2：</strong>［保存 → 导出］可以导出用户词典到本地根目录，文件名为：backup.txt （注意，文档编码是 utf-8 格式）</p>
+<p>  <strong>step3：</strong>［读取 → 导入］可以用第三方文档编辑工具，在backup.txt文件里面编辑添加自己需要的词条，然后导入到用户个人词典。</p>
+<p>  成功导入读取之后，可以在Gboard键盘的 设置→字典→个人字典→中文 里面看到刚才添加的词。</p>
+<h1 id="gboard键盘词典格式如下">Gboard键盘词典格式如下</h1>
+<p>  [&quot;zh&quot;,&quot;az&quot;,&quot;安卓&quot;]</p>
+<p>  【app下载链接】： <a href="https://huanity.lanzoui.com/i2SK4dnyd7a">查看链接</a> 提取码: adws</p>
+<p>  <a href="https://www.coolapk.com/feed/9208019?shareKey=NWIyYWI5Njk4YWNjNWVlNWYzYjg~&amp;shareUid=1187025&amp;shareFrom=com.coolapk.market_10.3">点击查看原文链接</a></p>
+<p>Tips：</p>
+<p>  点击读取之后会有数分钟卡顿，无响应，需耐心等待。此时读取图标呈点击时的灰色，路径中的光标停止闪动，完成之后会有Toast提示读取成功，光标恢复闪动，接着导入即可</p>
+<p>  此外，导入后Gboard字典应该能够看见导入内容，而谷歌拼音输入法可能不可见，但是实际词库可用，请自行尝试</p>
+<p>  根据评论区，还有批量删除字典教程：</p>
+<h1 id="免root删除全部词库的方法">免root删除全部词库的方法：</h1>
+<p>  下载app：User Dictionary Plus 链接: <a href="https://huanity.lanzoui.com/iXcxpdnzacd">查看链接</a> 提取码: wigp</p>
+<p>  安装后打开app，添加语言中没有中文，直接选择英文即可，进入应用后，点击最后一行的Delete User Dictionary，选择DO BACKUP AND DELETE，就可以删除全部添加在词库，无需双清，方便快捷</p>
+<p>  <a href="https://www.coolapk.com/feed/10525556?shareKey=Njk0NWNmMTZhNzQwNWVlNWYzYjg~&amp;shareUid=1187025&amp;shareFrom=com.coolapk.market_10.3">点击查看原文链接</a></p>
+<p>  相关衍生教程，主要提及词库转换过程：</p>
+<p>  <a href="https://www.coolapk.com/feed/14140762?shareKey=NDBiMWRiZTgwZDY3NWVlNWYzYjg~&amp;shareUid=1187025&amp;shareFrom=com.coolapk.market_10.3">链接1</a>（小鹤双拼词库转换与导入）</p>
+<p>  <a href="https://www.coolapk.com/feed/15615208?shareKey=YWMwZTJmNDZjYTFmNWVlNWZjMTA~&amp;shareUid=1187025&amp;shareFrom=com.coolapk.market_10.3">链接2</a>（普通词库转换与导入）</p>
+<p>  <a href="https://huanity.lanzoui.com/b05s8hkze">深蓝词库转换工具2.8_Windows</a>  密码:5t23</p>
+
+            </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      huanity
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://huanity.github.io/gu-ge-pin-yin-shu-ru-fa-dao-ru-zi-ding-yi-duan-yu/" title="谷歌拼音输入法导入自定义短语">https://huanity.github.io/gu-ge-pin-yin-shu-ru-fa-dao-ru-zi-ding-yi-duan-yu/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://huanity.github.io/TTmPvDD2U/"># 输入法</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="VPS(1)  Oracle甲骨文服务器的注册与使用教程" href="https://huanity.github.io/m__3QJ31A/">VPS(1)  Oracle甲骨文服务器的注册与使用教程</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="VPS(1)  Oracle甲骨文服务器的注册与使用教程" href="https://huanity.github.io/m__3QJ31A/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="用python画小猪佩奇" href="https://huanity.github.io/yong-python-hua-xiao-zhu-pei-qi/">用python画小猪佩奇</a>
+        <a class="nav-mobile-next" title="用python画小猪佩奇" href="https://huanity.github.io/yong-python-hua-xiao-zhu-pei-qi/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
+            
+  
+    
+      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '647d2e4f6e450269a807',
+    clientSecret: '408d76554433c93cb095b1b2b8cb072b336d33ba',
+    repo: 'huanity.github.io',
+    owner: 'huanity',
+    admin: ['huanity'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
+</script>
+    
+    
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a
+        href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>
+    <div class="poweredby">
+      
+    </div>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+    back2TopText = document.querySelector('#back_to_top_text'),
+    drawerBox = document.querySelector('#drawer_box'),
+    rightSideBar = document.querySelector('.sidebar'),
+    viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function (e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+
+  window.addEventListener('scroll', function (e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+
+  let hasCacu = false;
+  window.onresize = function () {
+    calcuHeight();
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function () {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, transitionDir, {});
+          }
+        })
+        window.Velocity(viewport, openProp, {
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp, {
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'true'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target", "_blank");
+      }
+    })
+  }
+
+  let faSearch = document.querySelector('#fa_search');
+  faSearch.addEventListener('click', function () {
+    document.querySelector('#search_mask').style = ''
+  })
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+  
+  // 离开当前页title变化
+  var leaveTitle = "";
+  if (leaveTitle) {
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = leaveTitle;
+      } else {
+        document.title = normal_title;
+      }
+    });
+  }
+
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+<script>
+  let images = document.querySelectorAll('.section img');
+  console.log(images);
+  images.forEach(image => {
+    var parent = image.parentElement;
+    var next = image.nextElementSibling;
+    parent.removeChild(image);
+    var aelem = document.createElement('a');
+    aelem.href = image.src;
+    aelem.dataset['fancybox'] = 'images';
+    aelem.dataset['rel'] = 'fancybox-button';
+    aelem.classList.add('fancybox');
+    aelem.appendChild(image);
+    parent.insertBefore(aelem, next);
+  })
+</script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
+  </div>
+</body>
+
+<div class="search-mask" id="search_mask" style="display: none;">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
+      </div>
+      <i id="close" class="fa fa-times-circle"></i>
+    </div>
+    <div class="stat-box">
+      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
+      <hr>
+    </div>
+    <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://huanity.github.io/AUXuRt0rQ/"" data-c="
+          &lt;h1 id=&#34;1-安装misakalinuxtoolbox&#34;&gt;1  安装MisakaLinuxToolbox&lt;/h1&gt;
+&lt;p&gt;这是一个Linux VPS工具箱，可以让我们更方便的管理服务器。&lt;br&gt;
+&lt;a href=&#34;https://github.com/Misaka-blog/MisakaLinuxToolbox&#34;&gt;项目地址&lt;/a&gt;：https://github.com/Misaka-blog/MisakaLinuxToolbox&lt;br&gt;
+使用方法：&lt;br&gt;
+0.给这个项目一个Star&lt;br&gt;
+1.用SSH客户端连接上VPS，输入以下命令（若不是root用户请先sudo -i提权）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;wget -N --no-check-certificate https://raw.githubusercontents.com/Misaka-blog/MisakaLinuxToolbox/master/MisakaToolbox.sh &amp;amp;&amp;amp; bash MisakaToolbox.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;国内特供版：(部分功能无法使用)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;wget -N --no-check-certificate https://gitee.com/Misaka-blog/MisakaLinuxToolbox/raw/master/MisakaToolbox.sh &amp;amp;&amp;amp; bash MisakaToolbox.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一次运行以后，可用快捷方式&lt;code&gt; bash MisakaToolbox.sh&lt;/code&gt;启动&lt;/p&gt;
+&lt;h1 id=&#34;2-x-ui面板的安装与使用&#34;&gt;2  x-ui面板的安装与使用&lt;/h1&gt;
+&lt;p&gt;在root用户模式下，输入&lt;code&gt; bash MisakaToolbox.sh&lt;/code&gt;，进入MisakaLinuxToolbox&lt;br&gt;
+在面板选项中，安装x-ui面板，按照步骤来可以很方便的安装面板，此处不再赘述。&lt;br&gt;
+具体的教程可以看下面的视频：&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/2UAwOhh8pb4&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;">VPS(2)  x-ui面板的安装与使用教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://huanity.github.io/m__3QJ31A/"" data-c="
+          &lt;p&gt;&lt;a href=&#34;https://uzbox.com/tag/jiaguwenyun&#34;&gt;甲骨文云&lt;/a&gt;（Oracle Cloud）是甲骨文公司提供的云端运算服务，甲骨文公司管理的资料中心通过全球网路向使用者提供伺服器、储存、网路、应用和服务。&lt;/p&gt;
+&lt;p&gt;甲骨文（Oracle Cloud）永久免费云主机最多创建2台实例，各自包含一条公网IP(IP地区仅限申请时选择的区域)，免费实例配置如下:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;1/8 OCPU 和 1 GB 内存&lt;/li&gt;
+&lt;li&gt;200GB存储空间&lt;/li&gt;
+&lt;li&gt;每台实例带宽官方标注是480mbps(实际测出来50mbps)&lt;/li&gt;
+&lt;li&gt;每月总出站流量是10T(帐号所有项目共享,入站免费)&lt;/li&gt;
+&lt;li&gt;Oracle Linux或CentOS、Ubuntu Linux系统镜像任选一种&lt;/li&gt;
+&lt;li&gt;ARM实例，最高可达4核24G内存，共享200G硬盘空间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;甲骨文采用的是资源平均分配，一台老母鸡分给8个人用，也就是1/8 ocpu，总共带宽是480，除以8大概就理论是60mbps，实际50mbps左右。&lt;/p&gt;
+&lt;h2 id=&#34;1-注册前需要的准备工作&#34;&gt;1  注册前需要的准备工作&lt;/h2&gt;
+&lt;p&gt;在申请注册前，需要做好如下准备：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一个邮箱，微软或者谷歌的都可以，两种邮箱都没有的话，不要用国内的QQ邮箱和163邮箱，收不到验证邮件。&lt;/li&gt;
+&lt;li&gt;一张外币信用卡，VISA或者Master的，可以美元扣费的。&lt;/li&gt;
+&lt;li&gt;一个手机号码，国内用户注册，使用国内手机号码就可以。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;2-oracle甲骨文服务器的注册&#34;&gt;2  Oracle（甲骨文）服务器的注册&lt;/h2&gt;
+&lt;p&gt;本部分文章为转载内容：&lt;a href=&#34;https://uzbox.com/tech/zuixinoracle-cloudjiaguwenyunzhucejiaochengzhongshenmianfeivpsyunzhuji.html&#34;&gt;最新Oracle Cloud甲骨文云注册教程：终身免费VPS云主机&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;21-访问活动地址&#34;&gt;2.1  访问活动地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.oracle.com/cn/cloud/free/&#34;&gt;Oracle 云免费套餐 | Oracle 中国&lt;/a&gt;&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959539647.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;注意：在点击开始免费试用之前，把电脑上的所有代理工具全部关闭，使用国内网络进行注册。推荐优先使用谷歌邮箱，微软邮箱。&lt;/p&gt;
+&lt;p&gt;下面开始填写注册信息。注意：下面注册的所有中文填写部分，请使用拼音代替。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959564670.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;地区：中国&lt;/p&gt;
+&lt;p&gt;名字：任意名称&lt;/p&gt;
+&lt;p&gt;电子邮件：可以接收到邮件的email地址&lt;/p&gt;
+&lt;p&gt;填写完毕后点击验证我的电子邮件。&lt;/p&gt;
+&lt;h3 id=&#34;22-完善相关信息&#34;&gt;2.2  完善相关信息&lt;/h3&gt;
+&lt;p&gt;甲骨文会发送一封邮件到你的邮箱，如下图所示。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959626313.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;击click here后，跳转到甲骨文云的账户信息填写页面。继续填写注册信息。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959644963.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;公司名称这里不用填写。&lt;/p&gt;
+&lt;p&gt;cloud账户名这个是系统默认分配的，也可以自定义一个账户名称。&lt;/p&gt;
+&lt;p&gt;服务器所在地的选择（主区域）：服务器所在地只能选择一次，也就是选了后，只能在这个区域内开相应的主机。&lt;/p&gt;
+&lt;p&gt;可选的地区如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;亚太地区&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;韩国-朝鲜（春川）&lt;/li&gt;
+&lt;li&gt;印度西部（孟买）&lt;/li&gt;
+&lt;li&gt;日本中部（大阪）&lt;/li&gt;
+&lt;li&gt;澳大利亚东南部（墨尔本）&lt;/li&gt;
+&lt;li&gt;印度南部（海得拉巴）&lt;/li&gt;
+&lt;li&gt;澳大利亚东部（悉尼）&lt;/li&gt;
+&lt;li&gt;韩国中部（首尔）&lt;/li&gt;
+&lt;li&gt;日本东（东京）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;北美&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加拿大东南部（多伦多）&lt;/li&gt;
+&lt;li&gt;美国西部（圣何塞）&lt;/li&gt;
+&lt;li&gt;美国西部（凤凰城）&lt;/li&gt;
+&lt;li&gt;加拿大东南部（蒙特利尔）&lt;/li&gt;
+&lt;li&gt;美国东部（阿什本）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;拉丁美洲&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;智利中部（圣地亚哥）&lt;/li&gt;
+&lt;li&gt;巴西东部（圣保罗）&lt;/li&gt;
+&lt;li&gt;巴西东南部（维涅杜）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;欧洲、中东和非洲&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;英国南部（伦敦）&lt;/li&gt;
+&lt;li&gt;沙特阿拉伯西部（吉达）&lt;/li&gt;
+&lt;li&gt;瑞士北部（苏黎世）&lt;/li&gt;
+&lt;li&gt;德国中部（法兰克福）&lt;/li&gt;
+&lt;li&gt;荷兰西北部（阿姆斯特丹）&lt;/li&gt;
+&lt;li&gt;英国西部（加的夫）&lt;/li&gt;
+&lt;li&gt;阿联酋东部（迪拜）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选择好服务器所在地后，填写地址信息，地址可以大致选择你所在的省事，不需要过于详细，然后填写手机号码，点击继续，填写付款信息。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;5&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959856769.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;填写付款信息。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;6&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959882155.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;请确保您在创建免费试用帐户时遵循以下几点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们不接受虚拟卡或预付卡。我们只接受信用卡（贷记卡）和借记卡。&lt;/li&gt;
+&lt;li&gt;信用卡或借记卡帐单地址应与您银行存档的地址一致。请输入有效且完整的地址。&lt;/li&gt;
+&lt;li&gt;未拥有多个帐户。请不要再试了，只有之前未注册的人才有资格获得 Oracle Cloud 免费套餐或免费试用 。&lt;/li&gt;
+&lt;li&gt;名字和姓氏应与银行记录匹配（其实不需要）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;23-注册结果&#34;&gt;2.3  注册结果&lt;/h3&gt;
+&lt;p&gt;不出意外的话，注册到此成功。或者会如下图所示，注册失败。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;7&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959898050.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;当然，这是一个玄学问题，你很有可能浪费了600s【手动狗头】。对此没有办法，只有不断地进行尝试，有可能过一段时间甲骨文就会放货了。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;8&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959918759.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;3-oracle甲骨文服务器的使用&#34;&gt;3  Oracle（甲骨文）服务器的使用&lt;/h2&gt;
+&lt;p&gt;本部分文章为转载内容：&lt;a href=&#34;https://www.zhuishangyun.com/770.html&#34;&gt;2021年申请永久免费甲骨文云Oracle Cloud并创建实例最全攻略。&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;31-进入到甲骨文云的后台界面&#34;&gt;3.1  进入到甲骨文云的后台界面&lt;/h3&gt;
+&lt;p&gt;进入后台界面，大概如图所示，可能会有略微差异。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;9&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959946629.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;点击右上角的地球图标，选择中文(简体)就可以切换语言了&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;10&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959967815.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;32-创建实例&#34;&gt;3.2 创建实例&lt;/h3&gt;
+&lt;p&gt;创建实例,实例名根据个人喜好来确定。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;11&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653959983132.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;更改一下实例硬件,主要是更改一下操作系统镜像.其它的选项默认就是Always Free Eligible&lt;br&gt;
+Oracle的Linux不太好用。如果后面VPS安装Socks5代理和宝塔面板什么的，笔者习惯CentOS 7，如果准备DD windows镜像，则需要选择Ubuntu 16.0&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;12&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960003657.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;免费的实例配置只有一种，当然现在也有ARM，可以拉满4H24G，只不过现在很难开到。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;13&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960014741.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;选择完就是如下图&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;14&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960037527.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;u&gt;&lt;strong&gt;注意，这里需要私有秘钥文件（非常的重要！！！），实例创建完后就没有了，一定要保存。&lt;/strong&gt;&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;另外，可以自行选择引导卷大小，默认为50G，引导卷文件可以选择加密传输。&lt;/p&gt;
+&lt;p&gt;点击创建，即可创建完成。&lt;/p&gt;
+&lt;h3 id=&#34;33-开启防火墙&#34;&gt;3.3  开启防火墙&lt;/h3&gt;
+&lt;p&gt;新建的甲骨文云帐号是关闭了所有的入站连接的,需要在防火墙处添加规则允许入站&lt;br&gt;
+在实例详细界面，点击子网&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;15&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960053661.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;点击默认的安全子网&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;16&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960071562.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;添加一个入站规则&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;17&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960089986.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;入站规则 - 源CIDR 0.0.0.0/0 - 所有协议&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;18&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960107419.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;添加成功，开放入站之后，就能在实例上运行程序了&lt;/p&gt;
+&lt;h3 id=&#34;34-甲骨文云oracle-cloud免费换ip&#34;&gt;3.4  甲骨文云Oracle Cloud免费换IP&lt;/h3&gt;
+&lt;p&gt;目前甲骨文云Oracle Cloud支持手动免费更换IP地址&lt;/p&gt;
+&lt;p&gt;1 在实例概览界面下拉，点击&amp;quot;附加的VNIC&amp;quot;-MAC地址处3点-查看详细信息&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;19&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960126446.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;2 IP地址-已分配处点击3点-编辑&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;20&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960145380.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;3 选择没有公共IP-更新. 这样就可以释放之前的IP地址&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;21&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960155956.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;4 重复第2步，然后选择&amp;quot;临时公共IP&amp;quot; -更新&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;22&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960171743.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;至此，IP地址更换成功了&lt;br&gt;
+最后说明&lt;br&gt;
+删除实例及注意事项&lt;br&gt;
+&lt;strong&gt;终止甲骨文云实例时，一定要勾选&amp;quot;永久删除附加的引导卷&amp;quot;&lt;/strong&gt;&lt;br&gt;
+否则引导卷超出100GB的空间会扣费的&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;23&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960187724.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;24&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960199869.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;当一个实例终止状态未变为&amp;quot;已终止&amp;quot;前，不要立即创建另一个实例&lt;/strong&gt;，否则可能会因为占用资源超出免费范围而在绑定信用卡上扣费&lt;/p&gt;
+&lt;h3 id=&#34;35-在ssh上连接服务器&#34;&gt;3.5 在SSH上连接服务器&lt;/h3&gt;
+&lt;p&gt;本部分文章转载于：&lt;a href=&#34;https://zhuanlan.zhihu.com/p/416709744&#34;&gt;甲骨文永久免费vps注册和使用简单教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这里以finalshell登录器，和centos7为例演示&lt;/p&gt;
+&lt;p&gt;一、现在这里找到用户名&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;25&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960243198.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;二、添加SSH链接，主机填IP，方法选公钥，点击浏览选择刚才下载的私钥，用户名就是刚才找到的用户名。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;26&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960262281.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;27&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960276684.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;28&#34;&gt;&lt;img src=&#34;https://huanity.github.io/post-images/1653960286638.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;三、切换至root账户&lt;/p&gt;
+&lt;p&gt;输入代码&lt;code&gt;sudo -i&lt;/code&gt;&lt;br&gt;
+切换至root账户&lt;/p&gt;
+">VPS(1)  Oracle甲骨文服务器的注册与使用教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://huanity.github.io/gu-ge-pin-yin-shu-ru-fa-dao-ru-zi-ding-yi-duan-yu/"" data-c="
+          &lt;p&gt;  主要记录了谷歌拼音输入法词库的导入方法以及相关工具&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;  在Gboard评论区偶然看见大佬发的字典导入教程，那时候Gboard的字典还没有导入导出选项，文中提及是用系统自带的个人字典，谷歌拼音和Gboard同样适用，感觉可以试一下。&lt;/p&gt;
+&lt;p&gt;  教程如下（文中部分修改和替换文件了链接）：&lt;/p&gt;
+&lt;h1 id=&#34;gboard键盘免root导入本地词典&#34;&gt;Gboard键盘免root导入本地词典&lt;/h1&gt;
+&lt;p&gt;  众所周知，因为涉及用户隐私问题，Gboard键盘和谷歌拼音已经没有了同步词典的功能。&lt;br&gt;
+但是我们可以另辟蹊径曲线救国。无需root，下载安装一个“用户个人词典备份工具 User Dictionary Backup.apk”，就可以导入本地词典，Gboard键盘和谷歌拼音都可以读取使用。&lt;/p&gt;
+&lt;h2 id=&#34;步骤&#34;&gt;【步骤】：&lt;/h2&gt;
+&lt;p&gt;  打开用户个人词典备份工具，&lt;br&gt;
+  &lt;strong&gt;step1：&lt;/strong&gt; 先点击［启用输入法］，在系统输入法里面添加 User Dictionary Backup 输入法。&lt;/p&gt;
+&lt;p&gt;  &lt;strong&gt;step2：&lt;/strong&gt;［保存 → 导出］可以导出用户词典到本地根目录，文件名为：backup.txt （注意，文档编码是 utf-8 格式）&lt;/p&gt;
+&lt;p&gt;  &lt;strong&gt;step3：&lt;/strong&gt;［读取 → 导入］可以用第三方文档编辑工具，在backup.txt文件里面编辑添加自己需要的词条，然后导入到用户个人词典。&lt;/p&gt;
+&lt;p&gt;  成功导入读取之后，可以在Gboard键盘的 设置→字典→个人字典→中文 里面看到刚才添加的词。&lt;/p&gt;
+&lt;h1 id=&#34;gboard键盘词典格式如下&#34;&gt;Gboard键盘词典格式如下&lt;/h1&gt;
+&lt;p&gt;  [&amp;quot;zh&amp;quot;,&amp;quot;az&amp;quot;,&amp;quot;安卓&amp;quot;]&lt;/p&gt;
+&lt;p&gt;  【app下载链接】： &lt;a href=&#34;https://huanity.lanzoui.com/i2SK4dnyd7a&#34;&gt;查看链接&lt;/a&gt; 提取码: adws&lt;/p&gt;
+&lt;p&gt;  &lt;a href=&#34;https://www.coolapk.com/feed/9208019?shareKey=NWIyYWI5Njk4YWNjNWVlNWYzYjg~&amp;amp;shareUid=1187025&amp;amp;shareFrom=com.coolapk.market_10.3&#34;&gt;点击查看原文链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tips：&lt;/p&gt;
+&lt;p&gt;  点击读取之后会有数分钟卡顿，无响应，需耐心等待。此时读取图标呈点击时的灰色，路径中的光标停止闪动，完成之后会有Toast提示读取成功，光标恢复闪动，接着导入即可&lt;/p&gt;
+&lt;p&gt;  此外，导入后Gboard字典应该能够看见导入内容，而谷歌拼音输入法可能不可见，但是实际词库可用，请自行尝试&lt;/p&gt;
+&lt;p&gt;  根据评论区，还有批量删除字典教程：&lt;/p&gt;
+&lt;h1 id=&#34;免root删除全部词库的方法&#34;&gt;免root删除全部词库的方法：&lt;/h1&gt;
+&lt;p&gt;  下载app：User Dictionary Plus 链接: &lt;a href=&#34;https://huanity.lanzoui.com/iXcxpdnzacd&#34;&gt;查看链接&lt;/a&gt; 提取码: wigp&lt;/p&gt;
+&lt;p&gt;  安装后打开app，添加语言中没有中文，直接选择英文即可，进入应用后，点击最后一行的Delete User Dictionary，选择DO BACKUP AND DELETE，就可以删除全部添加在词库，无需双清，方便快捷&lt;/p&gt;
+&lt;p&gt;  &lt;a href=&#34;https://www.coolapk.com/feed/10525556?shareKey=Njk0NWNmMTZhNzQwNWVlNWYzYjg~&amp;amp;shareUid=1187025&amp;amp;shareFrom=com.coolapk.market_10.3&#34;&gt;点击查看原文链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;  相关衍生教程，主要提及词库转换过程：&lt;/p&gt;
+&lt;p&gt;  &lt;a href=&#34;https://www.coolapk.com/feed/14140762?shareKey=NDBiMWRiZTgwZDY3NWVlNWYzYjg~&amp;amp;shareUid=1187025&amp;amp;shareFrom=com.coolapk.market_10.3&#34;&gt;链接1&lt;/a&gt;（小鹤双拼词库转换与导入）&lt;/p&gt;
+&lt;p&gt;  &lt;a href=&#34;https://www.coolapk.com/feed/15615208?shareKey=YWMwZTJmNDZjYTFmNWVlNWZjMTA~&amp;amp;shareUid=1187025&amp;amp;shareFrom=com.coolapk.market_10.3&#34;&gt;链接2&lt;/a&gt;（普通词库转换与导入）&lt;/p&gt;
+&lt;p&gt;  &lt;a href=&#34;https://huanity.lanzoui.com/b05s8hkze&#34;&gt;深蓝词库转换工具2.8_Windows&lt;/a&gt;  密码:5t23&lt;/p&gt;
+">谷歌拼音输入法导入自定义短语</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://huanity.github.io/yong-python-hua-xiao-zhu-pei-qi/"" data-c="
+          &lt;p&gt;  使用python画出小猪佩奇&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;  代码的运行结果如下：&lt;br&gt;
+&lt;img src=&#34;https://huanity.github.io/post-images/1653022625857.png#pic_center&#34; alt=&#34;小猪佩奇&#34; width=&#34;400&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/Monster12138/Peppa-Pig/blob/master/%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87.py&#34;&gt;点击查看原出处&lt;/a&gt;&lt;br&gt;
+代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# -*- encoding: utf-8 -*-
+&#39;&#39;&#39;
+@File    :   peppapig.py
+@Desc    :   画小猪佩奇
+&#39;&#39;&#39;
+import turtle as t
+
+t.pensize(4)
+t.hideturtle()
+t.colormode(255)
+t.color((255, 155, 192), &amp;quot;pink&amp;quot;)
+t.setup(840, 500)
+t.speed(10)
+
+#鼻子
+t.pu()
+t.goto(-100, 100)
+t.pd()
+t.seth(-30)
+t.begin_fill()
+a = 0.4
+for i in range(120):
+    if 0 &amp;lt;= i &amp;lt; 30 or 60 &amp;lt;= i &amp;lt; 90:
+        a = a+0.08
+        t.lt(3)  # 向左转3度
+        t.fd(a)  # 向前走a的步长
+    else:
+        a = a-0.08
+        t.lt(3)
+        t.fd(a)
+t.end_fill()
+
+t.pu()
+t.seth(90)
+t.fd(25)
+t.seth(0)
+t.fd(10)
+t.pd()
+t.pencolor(255, 155, 192)
+t.seth(10)
+t.begin_fill()
+t.circle(5)
+t.color(160, 82, 45)
+t.end_fill()
+
+t.pu()
+t.seth(0)
+t.fd(20)
+t.pd()
+t.pencolor(255, 155, 192)
+t.seth(10)
+t.begin_fill()
+t.circle(5)
+t.color(160, 82, 45)
+t.end_fill()
+
+#头
+t.color((255, 155, 192), &amp;quot;pink&amp;quot;)
+t.pu()
+t.seth(90)
+t.fd(41)
+t.seth(0)
+t.fd(0)
+t.pd()
+t.begin_fill()
+t.seth(180)
+t.circle(300, -30)
+t.circle(100, -60)
+t.circle(80, -100)
+t.circle(150, -20)
+t.circle(60, -95)
+t.seth(161)
+t.circle(-300, 15)
+t.pu()
+t.goto(-100, 100)
+t.pd()
+t.seth(-30)
+a = 0.4
+for i in range(60):
+    if 0 &amp;lt;= i &amp;lt; 30 or 60 &amp;lt;= i &amp;lt; 90:
+        a = a+0.08
+        t.lt(3)  # 向左转3度
+        t.fd(a)  # 向前走a的步长
+    else:
+        a = a-0.08
+        t.lt(3)
+        t.fd(a)
+t.end_fill()
+
+#耳朵
+t.color((255, 155, 192), &amp;quot;pink&amp;quot;)
+t.pu()
+t.seth(90)
+t.fd(-7)
+t.seth(0)
+t.fd(70)
+t.pd()
+t.begin_fill()
+t.seth(100)
+t.circle(-50, 50)
+t.circle(-10, 120)
+t.circle(-50, 54)
+t.end_fill()
+
+t.pu()
+t.seth(90)
+t.fd(-12)
+t.seth(0)
+t.fd(30)
+t.pd()
+t.begin_fill()
+t.seth(100)
+t.circle(-50, 50)
+t.circle(-10, 120)
+t.circle(-50, 56)
+t.end_fill()
+
+#眼睛
+t.color((255, 155, 192), &amp;quot;white&amp;quot;)
+t.pu()
+t.seth(90)
+t.fd(-20)
+t.seth(0)
+t.fd(-95)
+t.pd()
+t.begin_fill()
+t.circle(15)
+t.end_fill()
+
+t.color(&amp;quot;black&amp;quot;)
+t.pu()
+t.seth(90)
+t.fd(12)
+t.seth(0)
+t.fd(-3)
+t.pd()
+t.begin_fill()
+t.circle(3)
+t.end_fill()
+
+t.color((255, 155, 192), &amp;quot;white&amp;quot;)
+t.pu()
+t.seth(90)
+t.fd(-25)
+t.seth(0)
+t.fd(40)
+t.pd()
+t.begin_fill()
+t.circle(15)
+t.end_fill()
+
+t.color(&amp;quot;black&amp;quot;)
+t.pu()
+t.seth(90)
+t.fd(12)
+t.seth(0)
+t.fd(-3)
+t.pd()
+t.begin_fill()
+t.circle(3)
+t.end_fill()
+
+#腮
+t.color((255, 155, 192))
+t.pu()
+t.seth(90)
+t.fd(-95)
+t.seth(0)
+t.fd(65)
+t.pd()
+t.begin_fill()
+t.circle(30)
+t.end_fill()
+
+#嘴
+t.color(239, 69, 19)
+t.pu()
+t.seth(90)
+t.fd(15)
+t.seth(0)
+t.fd(-100)
+t.pd()
+t.seth(-80)
+t.circle(30, 40)
+t.circle(40, 80)
+
+#身体
+t.color(&amp;quot;red&amp;quot;, (255, 99, 71))
+t.pu()
+t.seth(90)
+t.fd(-20)
+t.seth(0)
+t.fd(-78)
+t.pd()
+t.begin_fill()
+t.seth(-130)
+t.circle(100, 10)
+t.circle(300, 30)
+t.seth(0)
+t.fd(230)
+t.seth(90)
+t.circle(300, 30)
+t.circle(100, 3)
+t.color((255, 155, 192), (255, 100, 100))
+t.seth(-135)
+t.circle(-80, 63)
+t.circle(-150, 24)
+t.end_fill()
+
+#手
+t.color((255, 155, 192))
+t.pu()
+t.seth(90)
+t.fd(-40)
+t.seth(0)
+t.fd(-27)
+t.pd()
+t.seth(-160)
+t.circle(300, 15)
+t.pu()
+t.seth(90)
+t.fd(15)
+t.seth(0)
+t.fd(0)
+t.pd()
+t.seth(-10)
+t.circle(-20, 90)
+
+t.pu()
+t.seth(90)
+t.fd(30)
+t.seth(0)
+t.fd(237)
+t.pd()
+t.seth(-20)
+t.circle(-300, 15)
+t.pu()
+t.seth(90)
+t.fd(20)
+t.seth(0)
+t.fd(0)
+t.pd()
+t.seth(-170)
+t.circle(20, 90)
+
+#脚
+t.pensize(10)
+t.color((240, 128, 128))
+t.pu()
+t.seth(90)
+t.fd(-75)
+t.seth(0)
+t.fd(-180)
+t.pd()
+t.seth(-90)
+t.fd(40)
+t.seth(-180)
+t.color(&amp;quot;black&amp;quot;)
+t.pensize(15)
+t.fd(20)
+
+t.pensize(10)
+t.color((240, 128, 128))
+t.pu()
+t.seth(90)
+t.fd(40)
+t.seth(0)
+t.fd(90)
+t.pd()
+t.seth(-90)
+t.fd(40)
+t.seth(-180)
+t.color(&amp;quot;black&amp;quot;)
+t.pensize(15)
+t.fd(20)
+
+#尾巴
+t.pensize(4)
+t.color((255, 155, 192))
+t.pu()
+t.seth(90)
+t.fd(70)
+t.seth(0)
+t.fd(95)
+t.pd()
+t.seth(0)
+t.circle(70, 20)
+t.circle(10, 330)
+t.circle(70, 30)
+t.done()
+&lt;/code&gt;&lt;/pre&gt;
+">用python画小猪佩奇</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://huanity.github.io/about/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;关于本站&#34;&gt;🏠 关于本站&lt;/h2&gt;
+&lt;h2 id=&#34;博主是谁&#34;&gt;👨‍💻 博主是谁&lt;/h2&gt;
+&lt;h2 id=&#34;兴趣爱好&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;
+&lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀&lt;/h2&gt;
+">关于</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://huanity.github.io/hello-gridea/"" data-c="
+          &lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
+✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/getgridea/gridea&#34;&gt;Github&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://gridea.dev/&#34;&gt;Gridea 主页&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://fehey.com/&#34;&gt;示例网站&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;特性👇&lt;/h2&gt;
+&lt;p&gt;📝  你可以使用最酷的 &lt;strong&gt;Markdown&lt;/strong&gt; 语法，进行快速创作&lt;/p&gt;
+&lt;p&gt;🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片&lt;/p&gt;
+&lt;p&gt;🏷️  你可以对文章进行标签分组&lt;/p&gt;
+&lt;p&gt;📋  你可以自定义菜单，甚至可以创建外部链接菜单&lt;/p&gt;
+&lt;p&gt;💻  你可以在 &lt;strong&gt;Windows&lt;/strong&gt;，&lt;strong&gt;MacOS&lt;/strong&gt; 或 &lt;strong&gt;Linux&lt;/strong&gt; 设备上使用此客户端&lt;/p&gt;
+&lt;p&gt;🌎  你可以使用 &lt;strong&gt;𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌&lt;/strong&gt; 或 &lt;strong&gt;Coding Pages&lt;/strong&gt; 向世界展示，未来将支持更多平台&lt;/p&gt;
+&lt;p&gt;💬  你可以进行简单的配置，接入 &lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 或 &lt;a href=&#34;https://github.com/SukkaW/DisqusJS&#34;&gt;DisqusJS&lt;/a&gt; 评论系统&lt;/p&gt;
+&lt;p&gt;🇬🇧  你可以使用&lt;strong&gt;中文简体&lt;/strong&gt;或&lt;strong&gt;英语&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力&lt;/p&gt;
+&lt;p&gt;🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步&lt;/p&gt;
+&lt;p&gt;🌱 当然 &lt;strong&gt;Gridea&lt;/strong&gt; 还很年轻，有很多不足，但请相信，它会不停向前 🏃&lt;/p&gt;
+&lt;p&gt;未来，它一定会成为你离不开的伙伴&lt;/p&gt;
+&lt;p&gt;尽情发挥你的才华吧！&lt;/p&gt;
+&lt;p&gt;😘 Enjoy~&lt;/p&gt;
+">Hello Gridea</a>
+      </div>
+      
+    </div>
+    <div class="page">
+      <div id="page_ul"></div>
+    </div>
+  </div>
+</div>
+<script>
+  !function () {
+    let searchMask = document.querySelector('#search_mask');
+    let result = document.querySelector('#result');
+    let items = document.querySelectorAll('.item');
+    let searchBox = document.querySelector('#search');
+    let statCount = document.querySelector('#stat_count');
+    let statTimes = document.querySelector('#stat_times');
+    let pageUl = document.querySelector('#page_ul');
+    let close = document.querySelector('#close');
+    
+    close.addEventListener('click', function() {
+      searchMask.style = 'display: none;'
+    })
+
+    let finds = [];
+    let contents = [];
+    let pageSize = 10;
+    items.forEach(item => {
+      let a = item.querySelector('a');
+      contents.push({
+        title: a.innerText,
+        details: a.dataset.c,
+        link: a.href
+      })
+      item.remove();
+    })
+
+    function insertStr(soure, start, count) {
+      let newStr = soure.substr(start, count);
+      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
+    }
+
+    pageUl.addEventListener('click', function(event) {
+      let target = event.target;
+      if (target.__proto__ === HTMLSpanElement.prototype) {
+        appendResults(parseInt(target.dataset.i));
+      }
+    })
+
+    function appendResults(index) {
+      let htmlResult = '';
+      let start = index || 0;
+      let end = Math.min(start + pageSize, finds.length);
+      for (let i = start; i < end; i++) {
+        const current = finds[i];
+        let html = current.title;
+        let sum = 0;
+        let positions = current.positions;
+        positions.forEach(position => {
+          html = insertStr(html, position.start + sum, position.count);
+          sum += 9;
+        })
+        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
+      }
+      result.innerHTML = htmlResult;
+      pageUl.innerHTML = '';
+      let count = finds.length / pageSize;
+      let lis = '';
+      if (start !== 0) {
+        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
+      }
+      for (let i = 0; i < count; i++) {
+        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
+      }
+      if (start+1 < count) {
+        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
+      }
+      pageUl.innerHTML = lis;
+    }
+
+    function search(delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          let start = Date.now();
+          let segments = searchBox.value.split(' ').filter(c => c != '');
+          if (segments.length <= 0) {
+            return;
+          }
+          finds = [];
+          let htmlResult = '';
+          contents.forEach(content => {
+            let title = content.title;
+            let positions = [];
+            let find = false;
+            segments.forEach((segment) => {
+              if (content.title.includes(segment)) {
+                find = true;
+                positions.push({
+                  start: content.title.indexOf(segment),
+                  count: segment.length
+                })
+              } else if (content.details.includes(segment)) {
+                find = true;
+              }
+            });
+            if (find) {
+              finds.push({
+                title: content.title,
+                link: content.link,
+                positions
+              });
+            }
+          })
+          appendResults(0);
+          statCount.textContent = finds.length;
+          statTimes.textContent = Date.now() - start;
+        }, delay)
+      }
+    }
+    searchBox.addEventListener('input', search(200));
+  }()
+</script>
+
+<input hidden id="copy" />
+<script>
+  !function () {
+    let times = document.querySelectorAll('.publish-time');
+    for (let i = 0; i < times.length; i++) {
+      let date = times[i].dataset.t;
+      let time = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
+      if (time < 60) {
+        str = time + '秒之前';
+      } else if (time < 3600) {
+        str = Math.floor(time / 60) + '分钟之前';
+      } else if (time >= 3600 && time < 86400) {
+        str = Math.floor(time / 3600) + '小时之前';
+      } else if (time >= 86400 && time < 259200) {
+        str = Math.floor(time / 86400) + '天之前';
+      } else {
+        str = times[i].textContent;
+      }
+      times[i].textContent = str;
+    }
+  }();
+</script>
+
+<script>
+  let language = '';
+  if (language !== '') {
+    let map = new Map();
+    if (language === 'en') {
+      map.set('search', 'Search');
+      map.set('category', 'Categories');
+      map.set('article', 'Articles');
+      map.set('tag', 'Tags');
+      map.set('top', 'Top');
+      map.set('publish', 'published');
+      map.set('minute', ' minutes');
+      map.set('read-more', 'Read More');
+      map.set('view', 'View');
+      map.set('words', ' words');
+      map.set('category-in', 'category in');
+      map.set('preview', 'Meta');
+      map.set('index', 'Toc');
+      map.set('no-archives', "You haven't created yet");
+      map.set('archives', " articles in total");
+      map.set('cloud-tags', " tags in total");
+      map.set('copyright', "Copyright: ");
+      map.set('author', "Author: ");
+      map.set('link', "Link: ");
+      map.set('leave-message', "Leave a message");
+      map.set('format', "Links Format");
+      map.set('site-name', "Name: ");
+      map.set('site-link', "Link: ");
+      map.set('site-desc', "Desc: ");
+      map.set('stat', " related results, taking ");
+      map.set('stat-time', " ms");
+      map.set('site-img', "Image: ");
+    }
+
+    if (map.size > 0) {
+      let lanElems = document.querySelectorAll('.language');
+      lanElems.forEach(elem => {
+        let lan = elem.dataset.lan, text = map.get(lan);
+        if (elem.__proto__ === HTMLInputElement.prototype) {
+          elem.placeholder = text
+        } else {
+          if (elem.dataset.count) {
+            text = elem.dataset.count + text;
+          }
+          elem.textContent = text;
+        }
+      })
+    }
+  }
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+
+</script>
+<script src="/media/js/motion.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  });
+</script>
+
+
+
+
+
+</html>

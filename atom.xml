@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://huanity.github.io</id>
+    <title>huanity</title>
+    <updated>2022-05-31T02:59:02.899Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://huanity.github.io"/>
+    <link rel="self" href="https://huanity.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://huanity.github.io/images/avatar.png</logo>
+    <icon>https://huanity.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, huanity</rights>
+    <entry>
+        <title type="html"><![CDATA[VPS(2)  x-ui面板的安装与使用教程]]></title>
+        <id>https://huanity.github.io/AUXuRt0rQ/</id>
+        <link href="https://huanity.github.io/AUXuRt0rQ/">
+        </link>
+        <updated>2022-05-31T02:18:48.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="1-安装misakalinuxtoolbox">1  安装MisakaLinuxToolbox</h1>
+<p>这是一个Linux VPS工具箱，可以让我们更方便的管理服务器。<br>
+<a href="https://github.com/Misaka-blog/MisakaLinuxToolbox">项目地址</a>：https://github.com/Misaka-blog/MisakaLinuxToolbox<br>
+使用方法：<br>
+0.给这个项目一个Star<br>
+1.用SSH客户端连接上VPS，输入以下命令（若不是root用户请先sudo -i提权）</p>
+<pre><code class="language-shell">wget -N --no-check-certificate https://raw.githubusercontents.com/Misaka-blog/MisakaLinuxToolbox/master/MisakaToolbox.sh &amp;&amp; bash MisakaToolbox.sh
+</code></pre>
+<p>国内特供版：(部分功能无法使用)</p>
+<pre><code class="language-shell">wget -N --no-check-certificate https://gitee.com/Misaka-blog/MisakaLinuxToolbox/raw/master/MisakaToolbox.sh &amp;&amp; bash MisakaToolbox.sh
+</code></pre>
+<p>第一次运行以后，可用快捷方式<code> bash MisakaToolbox.sh</code>启动</p>
+<h1 id="2-x-ui面板的安装与使用">2  x-ui面板的安装与使用</h1>
+<p>在root用户模式下，输入<code> bash MisakaToolbox.sh</code>，进入MisakaLinuxToolbox<br>
+在面板选项中，安装x-ui面板，按照步骤来可以很方便的安装面板，此处不再赘述。<br>
+具体的教程可以看下面的视频：</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2UAwOhh8pb4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VPS(1)  Oracle甲骨文服务器的注册与使用教程]]></title>
+        <id>https://huanity.github.io/m__3QJ31A/</id>
+        <link href="https://huanity.github.io/m__3QJ31A/">
+        </link>
+        <updated>2022-05-30T13:49:07.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://uzbox.com/tag/jiaguwenyun">甲骨文云</a>（Oracle Cloud）是甲骨文公司提供的云端运算服务，甲骨文公司管理的资料中心通过全球网路向使用者提供伺服器、储存、网路、应用和服务。</p>
+<p>甲骨文（Oracle Cloud）永久免费云主机最多创建2台实例，各自包含一条公网IP(IP地区仅限申请时选择的区域)，免费实例配置如下:</p>
+<ol>
+<li>1/8 OCPU 和 1 GB 内存</li>
+<li>200GB存储空间</li>
+<li>每台实例带宽官方标注是480mbps(实际测出来50mbps)</li>
+<li>每月总出站流量是10T(帐号所有项目共享,入站免费)</li>
+<li>Oracle Linux或CentOS、Ubuntu Linux系统镜像任选一种</li>
+<li>ARM实例，最高可达4核24G内存，共享200G硬盘空间</li>
+</ol>
+<p>甲骨文采用的是资源平均分配，一台老母鸡分给8个人用，也就是1/8 ocpu，总共带宽是480，除以8大概就理论是60mbps，实际50mbps左右。</p>
+<h2 id="1-注册前需要的准备工作">1  注册前需要的准备工作</h2>
+<p>在申请注册前，需要做好如下准备：</p>
+<ol>
+<li>一个邮箱，微软或者谷歌的都可以，两种邮箱都没有的话，不要用国内的QQ邮箱和163邮箱，收不到验证邮件。</li>
+<li>一张外币信用卡，VISA或者Master的，可以美元扣费的。</li>
+<li>一个手机号码，国内用户注册，使用国内手机号码就可以。</li>
+</ol>
+<h2 id="2-oracle甲骨文服务器的注册">2  Oracle（甲骨文）服务器的注册</h2>
+<p>本部分文章为转载内容：<a href="https://uzbox.com/tech/zuixinoracle-cloudjiaguwenyunzhucejiaochengzhongshenmianfeivpsyunzhuji.html">最新Oracle Cloud甲骨文云注册教程：终身免费VPS云主机</a></p>
+<h3 id="21-访问活动地址">2.1  访问活动地址</h3>
+<p><a href="https://www.oracle.com/cn/cloud/free/">Oracle 云免费套餐 | Oracle 中国</a></p>
+<figure data-type="image" tabindex="1"><img src="https://huanity.github.io/post-images/1653959539647.png" alt="" loading="lazy"></figure>
+<p>注意：在点击开始免费试用之前，把电脑上的所有代理工具全部关闭，使用国内网络进行注册。推荐优先使用谷歌邮箱，微软邮箱。</p>
+<p>下面开始填写注册信息。注意：下面注册的所有中文填写部分，请使用拼音代替。</p>
+<figure data-type="image" tabindex="2"><img src="https://huanity.github.io/post-images/1653959564670.png" alt="" loading="lazy"></figure>
+<p>地区：中国</p>
+<p>名字：任意名称</p>
+<p>电子邮件：可以接收到邮件的email地址</p>
+<p>填写完毕后点击验证我的电子邮件。</p>
+<h3 id="22-完善相关信息">2.2  完善相关信息</h3>
+<p>甲骨文会发送一封邮件到你的邮箱，如下图所示。</p>
+<figure data-type="image" tabindex="3"><img src="https://huanity.github.io/post-images/1653959626313.png" alt="" loading="lazy"></figure>
+<p>击click here后，跳转到甲骨文云的账户信息填写页面。继续填写注册信息。</p>
+<figure data-type="image" tabindex="4"><img src="https://huanity.github.io/post-images/1653959644963.png" alt="" loading="lazy"></figure>
+<p>公司名称这里不用填写。</p>
+<p>cloud账户名这个是系统默认分配的，也可以自定义一个账户名称。</p>
+<p>服务器所在地的选择（主区域）：服务器所在地只能选择一次，也就是选了后，只能在这个区域内开相应的主机。</p>
+<p>可选的地区如下所示：</p>
+<p><strong>亚太地区</strong></p>
+<ul>
+<li>韩国-朝鲜（春川）</li>
+<li>印度西部（孟买）</li>
+<li>日本中部（大阪）</li>
+<li>澳大利亚东南部（墨尔本）</li>
+<li>印度南部（海得拉巴）</li>
+<li>澳大利亚东部（悉尼）</li>
+<li>韩国中部（首尔）</li>
+<li>日本东（东京）</li>
+</ul>
+<p><strong>北美</strong></p>
+<ul>
+<li>加拿大东南部（多伦多）</li>
+<li>美国西部（圣何塞）</li>
+<li>美国西部（凤凰城）</li>
+<li>加拿大东南部（蒙特利尔）</li>
+<li>美国东部（阿什本）</li>
+</ul>
+<p><strong>拉丁美洲</strong></p>
+<ul>
+<li>智利中部（圣地亚哥）</li>
+<li>巴西东部（圣保罗）</li>
+<li>巴西东南部（维涅杜）</li>
+</ul>
+<p><strong>欧洲、中东和非洲</strong></p>
+<ul>
+<li>英国南部（伦敦）</li>
+<li>沙特阿拉伯西部（吉达）</li>
+<li>瑞士北部（苏黎世）</li>
+<li>德国中部（法兰克福）</li>
+<li>荷兰西北部（阿姆斯特丹）</li>
+<li>英国西部（加的夫）</li>
+<li>阿联酋东部（迪拜）</li>
+</ul>
+<p>选择好服务器所在地后，填写地址信息，地址可以大致选择你所在的省事，不需要过于详细，然后填写手机号码，点击继续，填写付款信息。</p>
+<figure data-type="image" tabindex="5"><img src="https://huanity.github.io/post-images/1653959856769.png" alt="" loading="lazy"></figure>
+<p>填写付款信息。</p>
+<figure data-type="image" tabindex="6"><img src="https://huanity.github.io/post-images/1653959882155.png" alt="" loading="lazy"></figure>
+<p>请确保您在创建免费试用帐户时遵循以下几点：</p>
+<ul>
+<li>我们不接受虚拟卡或预付卡。我们只接受信用卡（贷记卡）和借记卡。</li>
+<li>信用卡或借记卡帐单地址应与您银行存档的地址一致。请输入有效且完整的地址。</li>
+<li>未拥有多个帐户。请不要再试了，只有之前未注册的人才有资格获得 Oracle Cloud 免费套餐或免费试用 。</li>
+<li>名字和姓氏应与银行记录匹配（其实不需要）。</li>
+</ul>
+<h3 id="23-注册结果">2.3  注册结果</h3>
+<p>不出意外的话，注册到此成功。或者会如下图所示，注册失败。</p>
+<figure data-type="image" tabindex="7"><img src="https://huanity.github.io/post-images/1653959898050.png" alt="" loading="lazy"></figure>
+<p>当然，这是一个玄学问题，你很有可能浪费了600s【手动狗头】。对此没有办法，只有不断地进行尝试，有可能过一段时间甲骨文就会放货了。</p>
+<figure data-type="image" tabindex="8"><img src="https://huanity.github.io/post-images/1653959918759.png" alt="" loading="lazy"></figure>
+<h2 id="3-oracle甲骨文服务器的使用">3  Oracle（甲骨文）服务器的使用</h2>
+<p>本部分文章为转载内容：<a href="https://www.zhuishangyun.com/770.html">2021年申请永久免费甲骨文云Oracle Cloud并创建实例最全攻略。</a></p>
+<h3 id="31-进入到甲骨文云的后台界面">3.1  进入到甲骨文云的后台界面</h3>
+<p>进入后台界面，大概如图所示，可能会有略微差异。</p>
+<figure data-type="image" tabindex="9"><img src="https://huanity.github.io/post-images/1653959946629.jpg" alt="" loading="lazy"></figure>
+<p>点击右上角的地球图标，选择中文(简体)就可以切换语言了</p>
+<figure data-type="image" tabindex="10"><img src="https://huanity.github.io/post-images/1653959967815.jpg" alt="" loading="lazy"></figure>
+<h3 id="32-创建实例">3.2 创建实例</h3>
+<p>创建实例,实例名根据个人喜好来确定。</p>
+<figure data-type="image" tabindex="11"><img src="https://huanity.github.io/post-images/1653959983132.jpg" alt="" loading="lazy"></figure>
+<p>更改一下实例硬件,主要是更改一下操作系统镜像.其它的选项默认就是Always Free Eligible<br>
+Oracle的Linux不太好用。如果后面VPS安装Socks5代理和宝塔面板什么的，笔者习惯CentOS 7，如果准备DD windows镜像，则需要选择Ubuntu 16.0</p>
+<figure data-type="image" tabindex="12"><img src="https://huanity.github.io/post-images/1653960003657.jpg" alt="" loading="lazy"></figure>
+<p>免费的实例配置只有一种，当然现在也有ARM，可以拉满4H24G，只不过现在很难开到。</p>
+<figure data-type="image" tabindex="13"><img src="https://huanity.github.io/post-images/1653960014741.jpg" alt="" loading="lazy"></figure>
+<p>选择完就是如下图</p>
+<figure data-type="image" tabindex="14"><img src="https://huanity.github.io/post-images/1653960037527.jpg" alt="" loading="lazy"></figure>
+<p><u><strong>注意，这里需要私有秘钥文件（非常的重要！！！），实例创建完后就没有了，一定要保存。</strong></u></p>
+<p>另外，可以自行选择引导卷大小，默认为50G，引导卷文件可以选择加密传输。</p>
+<p>点击创建，即可创建完成。</p>
+<h3 id="33-开启防火墙">3.3  开启防火墙</h3>
+<p>新建的甲骨文云帐号是关闭了所有的入站连接的,需要在防火墙处添加规则允许入站<br>
+在实例详细界面，点击子网</p>
+<figure data-type="image" tabindex="15"><img src="https://huanity.github.io/post-images/1653960053661.jpg" alt="" loading="lazy"></figure>
+<p>点击默认的安全子网</p>
+<figure data-type="image" tabindex="16"><img src="https://huanity.github.io/post-images/1653960071562.jpg" alt="" loading="lazy"></figure>
+<p>添加一个入站规则</p>
+<figure data-type="image" tabindex="17"><img src="https://huanity.github.io/post-images/1653960089986.jpg" alt="" loading="lazy"></figure>
+<p>入站规则 - 源CIDR 0.0.0.0/0 - 所有协议</p>
+<figure data-type="image" tabindex="18"><img src="https://huanity.github.io/post-images/1653960107419.jpg" alt="" loading="lazy"></figure>
+<p>添加成功，开放入站之后，就能在实例上运行程序了</p>
+<h3 id="34-甲骨文云oracle-cloud免费换ip">3.4  甲骨文云Oracle Cloud免费换IP</h3>
+<p>目前甲骨文云Oracle Cloud支持手动免费更换IP地址</p>
+<p>1 在实例概览界面下拉，点击&quot;附加的VNIC&quot;-MAC地址处3点-查看详细信息</p>
+<figure data-type="image" tabindex="19"><img src="https://huanity.github.io/post-images/1653960126446.jpg" alt="" loading="lazy"></figure>
+<p>2 IP地址-已分配处点击3点-编辑</p>
+<figure data-type="image" tabindex="20"><img src="https://huanity.github.io/post-images/1653960145380.jpg" alt="" loading="lazy"></figure>
+<p>3 选择没有公共IP-更新. 这样就可以释放之前的IP地址</p>
+<figure data-type="image" tabindex="21"><img src="https://huanity.github.io/post-images/1653960155956.jpg" alt="" loading="lazy"></figure>
+<p>4 重复第2步，然后选择&quot;临时公共IP&quot; -更新</p>
+<figure data-type="image" tabindex="22"><img src="https://huanity.github.io/post-images/1653960171743.jpg" alt="" loading="lazy"></figure>
+<p>至此，IP地址更换成功了<br>
+最后说明<br>
+删除实例及注意事项<br>
+<strong>终止甲骨文云实例时，一定要勾选&quot;永久删除附加的引导卷&quot;</strong><br>
+否则引导卷超出100GB的空间会扣费的</p>
+<figure data-type="image" tabindex="23"><img src="https://huanity.github.io/post-images/1653960187724.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="24"><img src="https://huanity.github.io/post-images/1653960199869.jpg" alt="" loading="lazy"></figure>
+<p><strong>当一个实例终止状态未变为&quot;已终止&quot;前，不要立即创建另一个实例</strong>，否则可能会因为占用资源超出免费范围而在绑定信用卡上扣费</p>
+<h3 id="35-在ssh上连接服务器">3.5 在SSH上连接服务器</h3>
+<p>本部分文章转载于：<a href="https://zhuanlan.zhihu.com/p/416709744">甲骨文永久免费vps注册和使用简单教程</a></p>
+<p>这里以finalshell登录器，和centos7为例演示</p>
+<p>一、现在这里找到用户名</p>
+<figure data-type="image" tabindex="25"><img src="https://huanity.github.io/post-images/1653960243198.jpg" alt="" loading="lazy"></figure>
+<p>二、添加SSH链接，主机填IP，方法选公钥，点击浏览选择刚才下载的私钥，用户名就是刚才找到的用户名。</p>
+<figure data-type="image" tabindex="26"><img src="https://huanity.github.io/post-images/1653960262281.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="27"><img src="https://huanity.github.io/post-images/1653960276684.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="28"><img src="https://huanity.github.io/post-images/1653960286638.jpg" alt="" loading="lazy"></figure>
+<p>三、切换至root账户</p>
+<p>输入代码<code>sudo -i</code><br>
+切换至root账户</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[谷歌拼音输入法导入自定义短语]]></title>
+        <id>https://huanity.github.io/gu-ge-pin-yin-shu-ru-fa-dao-ru-zi-ding-yi-duan-yu/</id>
+        <link href="https://huanity.github.io/gu-ge-pin-yin-shu-ru-fa-dao-ru-zi-ding-yi-duan-yu/">
+        </link>
+        <updated>2020-06-14T08:36:22.000Z</updated>
+        <summary type="html"><![CDATA[<p>  主要记录了谷歌拼音输入法词库的导入方法以及相关工具</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>  主要记录了谷歌拼音输入法词库的导入方法以及相关工具</p>
+<!-- more -->
+<p>  在Gboard评论区偶然看见大佬发的字典导入教程，那时候Gboard的字典还没有导入导出选项，文中提及是用系统自带的个人字典，谷歌拼音和Gboard同样适用，感觉可以试一下。</p>
+<p>  教程如下（文中部分修改和替换文件了链接）：</p>
+<h1 id="gboard键盘免root导入本地词典">Gboard键盘免root导入本地词典</h1>
+<p>  众所周知，因为涉及用户隐私问题，Gboard键盘和谷歌拼音已经没有了同步词典的功能。<br>
+但是我们可以另辟蹊径曲线救国。无需root，下载安装一个“用户个人词典备份工具 User Dictionary Backup.apk”，就可以导入本地词典，Gboard键盘和谷歌拼音都可以读取使用。</p>
+<h2 id="步骤">【步骤】：</h2>
+<p>  打开用户个人词典备份工具，<br>
+  <strong>step1：</strong> 先点击［启用输入法］，在系统输入法里面添加 User Dictionary Backup 输入法。</p>
+<p>  <strong>step2：</strong>［保存 → 导出］可以导出用户词典到本地根目录，文件名为：backup.txt （注意，文档编码是 utf-8 格式）</p>
+<p>  <strong>step3：</strong>［读取 → 导入］可以用第三方文档编辑工具，在backup.txt文件里面编辑添加自己需要的词条，然后导入到用户个人词典。</p>
+<p>  成功导入读取之后，可以在Gboard键盘的 设置→字典→个人字典→中文 里面看到刚才添加的词。</p>
+<h1 id="gboard键盘词典格式如下">Gboard键盘词典格式如下</h1>
+<p>  [&quot;zh&quot;,&quot;az&quot;,&quot;安卓&quot;]</p>
+<p>  【app下载链接】： <a href="https://huanity.lanzoui.com/i2SK4dnyd7a">查看链接</a> 提取码: adws</p>
+<p>  <a href="https://www.coolapk.com/feed/9208019?shareKey=NWIyYWI5Njk4YWNjNWVlNWYzYjg~&amp;shareUid=1187025&amp;shareFrom=com.coolapk.market_10.3">点击查看原文链接</a></p>
+<p>Tips：</p>
+<p>  点击读取之后会有数分钟卡顿，无响应，需耐心等待。此时读取图标呈点击时的灰色，路径中的光标停止闪动，完成之后会有Toast提示读取成功，光标恢复闪动，接着导入即可</p>
+<p>  此外，导入后Gboard字典应该能够看见导入内容，而谷歌拼音输入法可能不可见，但是实际词库可用，请自行尝试</p>
+<p>  根据评论区，还有批量删除字典教程：</p>
+<h1 id="免root删除全部词库的方法">免root删除全部词库的方法：</h1>
+<p>  下载app：User Dictionary Plus 链接: <a href="https://huanity.lanzoui.com/iXcxpdnzacd">查看链接</a> 提取码: wigp</p>
+<p>  安装后打开app，添加语言中没有中文，直接选择英文即可，进入应用后，点击最后一行的Delete User Dictionary，选择DO BACKUP AND DELETE，就可以删除全部添加在词库，无需双清，方便快捷</p>
+<p>  <a href="https://www.coolapk.com/feed/10525556?shareKey=Njk0NWNmMTZhNzQwNWVlNWYzYjg~&amp;shareUid=1187025&amp;shareFrom=com.coolapk.market_10.3">点击查看原文链接</a></p>
+<p>  相关衍生教程，主要提及词库转换过程：</p>
+<p>  <a href="https://www.coolapk.com/feed/14140762?shareKey=NDBiMWRiZTgwZDY3NWVlNWYzYjg~&amp;shareUid=1187025&amp;shareFrom=com.coolapk.market_10.3">链接1</a>（小鹤双拼词库转换与导入）</p>
+<p>  <a href="https://www.coolapk.com/feed/15615208?shareKey=YWMwZTJmNDZjYTFmNWVlNWZjMTA~&amp;shareUid=1187025&amp;shareFrom=com.coolapk.market_10.3">链接2</a>（普通词库转换与导入）</p>
+<p>  <a href="https://huanity.lanzoui.com/b05s8hkze">深蓝词库转换工具2.8_Windows</a>  密码:5t23</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[用python画小猪佩奇]]></title>
+        <id>https://huanity.github.io/yong-python-hua-xiao-zhu-pei-qi/</id>
+        <link href="https://huanity.github.io/yong-python-hua-xiao-zhu-pei-qi/">
+        </link>
+        <updated>2020-06-01T14:09:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>  使用python画出小猪佩奇</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>  使用python画出小猪佩奇</p>
+<!-- more -->
+<p>  代码的运行结果如下：<br>
+<img src="https://huanity.github.io/post-images/1653022625857.png#pic_center" alt="小猪佩奇" width="400" loading="lazy"><br>
+<a href="https://github.com/Monster12138/Peppa-Pig/blob/master/%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87.py">点击查看原出处</a><br>
+代码：</p>
+<pre><code class="language-python"># -*- encoding: utf-8 -*-
+'''
+@File    :   peppapig.py
+@Desc    :   画小猪佩奇
+'''
+import turtle as t
+
+t.pensize(4)
+t.hideturtle()
+t.colormode(255)
+t.color((255, 155, 192), &quot;pink&quot;)
+t.setup(840, 500)
+t.speed(10)
+
+#鼻子
+t.pu()
+t.goto(-100, 100)
+t.pd()
+t.seth(-30)
+t.begin_fill()
+a = 0.4
+for i in range(120):
+    if 0 &lt;= i &lt; 30 or 60 &lt;= i &lt; 90:
+        a = a+0.08
+        t.lt(3)  # 向左转3度
+        t.fd(a)  # 向前走a的步长
+    else:
+        a = a-0.08
+        t.lt(3)
+        t.fd(a)
+t.end_fill()
+
+t.pu()
+t.seth(90)
+t.fd(25)
+t.seth(0)
+t.fd(10)
+t.pd()
+t.pencolor(255, 155, 192)
+t.seth(10)
+t.begin_fill()
+t.circle(5)
+t.color(160, 82, 45)
+t.end_fill()
+
+t.pu()
+t.seth(0)
+t.fd(20)
+t.pd()
+t.pencolor(255, 155, 192)
+t.seth(10)
+t.begin_fill()
+t.circle(5)
+t.color(160, 82, 45)
+t.end_fill()
+
+#头
+t.color((255, 155, 192), &quot;pink&quot;)
+t.pu()
+t.seth(90)
+t.fd(41)
+t.seth(0)
+t.fd(0)
+t.pd()
+t.begin_fill()
+t.seth(180)
+t.circle(300, -30)
+t.circle(100, -60)
+t.circle(80, -100)
+t.circle(150, -20)
+t.circle(60, -95)
+t.seth(161)
+t.circle(-300, 15)
+t.pu()
+t.goto(-100, 100)
+t.pd()
+t.seth(-30)
+a = 0.4
+for i in range(60):
+    if 0 &lt;= i &lt; 30 or 60 &lt;= i &lt; 90:
+        a = a+0.08
+        t.lt(3)  # 向左转3度
+        t.fd(a)  # 向前走a的步长
+    else:
+        a = a-0.08
+        t.lt(3)
+        t.fd(a)
+t.end_fill()
+
+#耳朵
+t.color((255, 155, 192), &quot;pink&quot;)
+t.pu()
+t.seth(90)
+t.fd(-7)
+t.seth(0)
+t.fd(70)
+t.pd()
+t.begin_fill()
+t.seth(100)
+t.circle(-50, 50)
+t.circle(-10, 120)
+t.circle(-50, 54)
+t.end_fill()
+
+t.pu()
+t.seth(90)
+t.fd(-12)
+t.seth(0)
+t.fd(30)
+t.pd()
+t.begin_fill()
+t.seth(100)
+t.circle(-50, 50)
+t.circle(-10, 120)
+t.circle(-50, 56)
+t.end_fill()
+
+#眼睛
+t.color((255, 155, 192), &quot;white&quot;)
+t.pu()
+t.seth(90)
+t.fd(-20)
+t.seth(0)
+t.fd(-95)
+t.pd()
+t.begin_fill()
+t.circle(15)
+t.end_fill()
+
+t.color(&quot;black&quot;)
+t.pu()
+t.seth(90)
+t.fd(12)
+t.seth(0)
+t.fd(-3)
+t.pd()
+t.begin_fill()
+t.circle(3)
+t.end_fill()
+
+t.color((255, 155, 192), &quot;white&quot;)
+t.pu()
+t.seth(90)
+t.fd(-25)
+t.seth(0)
+t.fd(40)
+t.pd()
+t.begin_fill()
+t.circle(15)
+t.end_fill()
+
+t.color(&quot;black&quot;)
+t.pu()
+t.seth(90)
+t.fd(12)
+t.seth(0)
+t.fd(-3)
+t.pd()
+t.begin_fill()
+t.circle(3)
+t.end_fill()
+
+#腮
+t.color((255, 155, 192))
+t.pu()
+t.seth(90)
+t.fd(-95)
+t.seth(0)
+t.fd(65)
+t.pd()
+t.begin_fill()
+t.circle(30)
+t.end_fill()
+
+#嘴
+t.color(239, 69, 19)
+t.pu()
+t.seth(90)
+t.fd(15)
+t.seth(0)
+t.fd(-100)
+t.pd()
+t.seth(-80)
+t.circle(30, 40)
+t.circle(40, 80)
+
+#身体
+t.color(&quot;red&quot;, (255, 99, 71))
+t.pu()
+t.seth(90)
+t.fd(-20)
+t.seth(0)
+t.fd(-78)
+t.pd()
+t.begin_fill()
+t.seth(-130)
+t.circle(100, 10)
+t.circle(300, 30)
+t.seth(0)
+t.fd(230)
+t.seth(90)
+t.circle(300, 30)
+t.circle(100, 3)
+t.color((255, 155, 192), (255, 100, 100))
+t.seth(-135)
+t.circle(-80, 63)
+t.circle(-150, 24)
+t.end_fill()
+
+#手
+t.color((255, 155, 192))
+t.pu()
+t.seth(90)
+t.fd(-40)
+t.seth(0)
+t.fd(-27)
+t.pd()
+t.seth(-160)
+t.circle(300, 15)
+t.pu()
+t.seth(90)
+t.fd(15)
+t.seth(0)
+t.fd(0)
+t.pd()
+t.seth(-10)
+t.circle(-20, 90)
+
+t.pu()
+t.seth(90)
+t.fd(30)
+t.seth(0)
+t.fd(237)
+t.pd()
+t.seth(-20)
+t.circle(-300, 15)
+t.pu()
+t.seth(90)
+t.fd(20)
+t.seth(0)
+t.fd(0)
+t.pd()
+t.seth(-170)
+t.circle(20, 90)
+
+#脚
+t.pensize(10)
+t.color((240, 128, 128))
+t.pu()
+t.seth(90)
+t.fd(-75)
+t.seth(0)
+t.fd(-180)
+t.pd()
+t.seth(-90)
+t.fd(40)
+t.seth(-180)
+t.color(&quot;black&quot;)
+t.pensize(15)
+t.fd(20)
+
+t.pensize(10)
+t.color((240, 128, 128))
+t.pu()
+t.seth(90)
+t.fd(40)
+t.seth(0)
+t.fd(90)
+t.pd()
+t.seth(-90)
+t.fd(40)
+t.seth(-180)
+t.color(&quot;black&quot;)
+t.pensize(15)
+t.fd(20)
+
+#尾巴
+t.pensize(4)
+t.color((255, 155, 192))
+t.pu()
+t.seth(90)
+t.fd(70)
+t.seth(0)
+t.fd(95)
+t.pd()
+t.seth(0)
+t.circle(70, 20)
+t.circle(10, 330)
+t.circle(70, 30)
+t.done()
+</code></pre>
+]]></content>
+    </entry>
+</feed>
